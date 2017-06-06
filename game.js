@@ -21,18 +21,35 @@ function bindEventListeners (dots) {
 function makeGreen (evt) {
   evt.preventDefault()
   evt.target.classList.toggle('green')
+if(evt.target.classList.contains('blue')){
+    evt.target.classList.toggle('blue')
+}
+if(evt.target.classList.contains('invisible')){
+    evt.target.classList.toggle('invisible')
+}
   updateCounts()
 }
 
 // CREATE FUNCTION makeBlue HERE
 function makeBlue(evt){
-
   evt.target.classList.toggle('blue')
+  if(evt.target.classList.contains('green')){
+      evt.target.classList.toggle('green')
+  }
+  if(evt.target.classList.contains('invisible')){
+      evt.target.classList.toggle('invisible')
+  }
   updateCounts()
 }
 // CREATE FUNCTION hide HERE
 function hide (evt){
   evt.target.classList.toggle('invisible')
+  if(evt.target.classList.contains('blue')){
+      evt.target.classList.toggle('blue')
+  }
+  if(evt.target.classList.contains('green')){
+      evt.target.classList.toggle('green')
+  }
   updateCounts()
 }
 function updateCounts () {
@@ -42,32 +59,19 @@ function updateCounts () {
     invisible: 0
   }
 
-  // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS ******here
-  var dots = document.getElementsByClassName('board')[0].children;
-for (var i = 0; i<dots.length; i++){
-switch(dots[i].classList.contains){
-case: 'green';
- if  dots[i].classList.contains('green')
-   totals.green+=1;}
- break;
- case 'blue';
-  totals.blue+=1
-  break;
-  case: 'invisible';
-   totals.invisible+=1;
-   break;
-   default:
-   break;
-}
+      // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS ******here
+    var dots = document.getElementsByClassName('board')[0].children;
+    for (var i = 0; i<dots.length; i++){
+        if(dots[i].classList.contains('blue')){
+            totals.blue+=1;
+         }
+        else  if(dots[i].classList.contains('green')){
+            totals.green+=1;
+         }
+         else if(dots[i].classList.contains('invisible')){
+           totals.invisible+=1;
+         }
 
-  // if(dots[i].classList.contains('blue')){
-  //    totals.blue+=1;
-  //  }
-  // else  if(dots[i].classList.contains('green')){
-  //    totals.green+=1;
-  //  }
-  // else  if(dots[i].classList.contains('invisible')){
-  //    totals.invisible+=1;  }
 
  }
   // By adding else if's instead of Ifs it means only one property can be applied to the subject. however it locks onto first priority in this order; blue, green, invisible.
