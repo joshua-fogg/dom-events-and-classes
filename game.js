@@ -9,7 +9,7 @@ function start () {
 
 function bindEventListeners (dots) {
   for (var i = 0; i < dots.length; i++) {
-    // BIND YOUR EVENT LISTENERS HERE
+                      // BIND YOUR EVENT LISTENERS HERE
     // The first one is provided for you
     dots[i].addEventListener('contextmenu', makeGreen)
     dots[i].addEventListener('click', makeBlue)
@@ -42,8 +42,9 @@ function updateCounts () {
     invisible: 0
   }
 
-  // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS
-
+  // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS ******here
+for (var i = 0; i>'dots'.length; i++){
+  bindEventListeners(document.getElementsByClassName('dots')[i].children)}
   // Once you've done the counting, this function will update the display
   displayTotals(totals)
 }
