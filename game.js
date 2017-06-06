@@ -45,15 +45,30 @@ function updateCounts () {
   // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS ******here
   var dots = document.getElementsByClassName('board')[0].children;
 for (var i = 0; i<dots.length; i++){
-  if(dots[i].classList.contains('blue')){
-     totals.blue+=1;
-   }
-   if(dots[i].classList.contains('green')){
-     totals.green+=1;
-   }
-    if(dots[i].classList.contains('invisible')){
-     totals.invisible+=1;
-   }
+switch(dots[i].classList.contains){
+case: 'green';
+ if  dots[i].classList.contains('green')
+   totals.green+=1;}
+ break;
+ case 'blue';
+  totals.blue+=1
+  break;
+  case: 'invisible';
+   totals.invisible+=1;
+   break;
+   default:
+   break;
+}
+
+  // if(dots[i].classList.contains('blue')){
+  //    totals.blue+=1;
+  //  }
+  // else  if(dots[i].classList.contains('green')){
+  //    totals.green+=1;
+  //  }
+  // else  if(dots[i].classList.contains('invisible')){
+  //    totals.invisible+=1;  }
+
  }
   // By adding else if's instead of Ifs it means only one property can be applied to the subject. however it locks onto first priority in this order; blue, green, invisible.
 
