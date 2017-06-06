@@ -48,15 +48,14 @@ for (var i = 0; i<dots.length; i++){
   if(dots[i].classList.contains('blue')){
      totals.blue+=1;
    }
-  else if(dots[i].classList.contains('green')){
+   if(dots[i].classList.contains('green')){
      totals.green+=1;
    }
-  // By adding else if's instead of Ifs it means only one property can be applied to the subject. however it locks onto first priority in this order; blue, green, invisible.
-  else  if(dots[i].classList.contains('invisible')){
+    if(dots[i].classList.contains('invisible')){
      totals.invisible+=1;
    }
  }
-
+  // By adding else if's instead of Ifs it means only one property can be applied to the subject. however it locks onto first priority in this order; blue, green, invisible.
 
   // Once you've done the counting, this function will update the display
   displayTotals(totals)
